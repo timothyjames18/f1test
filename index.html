@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lights Out reaction test</title>
+<meta name="description" content="Reaction time test with a five-light start. Press as soon as the lights go out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="strip" aria-hidden="true"></div>
+<header>
+  <h1>Lights Out</h1>
+  <button type="button" class="link" id="beepBtn" aria-pressed="true">Beep: On</button>
+</header>
+<main>
+  <button id="pad" type="button" aria-label="Reaction pad. Press to start, then press again when the lights go out.">
+    <div class="gantry" id="gantry" aria-hidden="true"></div>
+    <div id="readout" aria-live="polite">Ready</div>
+    <div id="msg">Click, tap or press Space to start.</div>
+  </button>
+
+  <section>
+    <h2>Results</h2>
+    <dl class="stats">
+      <dt>Best</dt><dd id="sBest">–</dd>
+      <dt>Average</dt><dd id="sAvg">–</dd>
+      <dt>Attempts</dt><dd id="sCount">0</dd>
+    </dl>
+    <ul id="hist"><li class="empty">No attempts yet.</li></ul>
+    <button class="link" id="reset" type="button">Clear results</button>
+  </section>
+
+  <section>
+    <h2>What’s a good time?</h2>
+    <p>Most people land between 200 and 300 ms. Your result varies with your device, screen and input method, so compare your own attempts to each other more than to anyone else’s.</p>
+    <div class="scroll"><table class="tiers">
+      <tr><th>Time</th><th>Rating</th></tr>
+      <tr><td>Under 150 ms</td><td>Exceptional, or a very lucky guess</td></tr>
+      <tr><td>150–200 ms</td><td>Excellent</td></tr>
+      <tr><td>200–250 ms</td><td>Good</td></tr>
+      <tr><td>250–350 ms</td><td>Average</td></tr>
+      <tr><td>Over 350 ms</td><td>Slow. Try again when you’re rested.</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Notes</h2>
+    <p>Five lights come on, one second apart. After the fifth, there is a random wait of one to four seconds and then they all go out. Press as soon as they do.</p>
+    <p>Pressing before they go out is a jump start and is not recorded. Results are kept in this browser only.</p>
+  </section>
+</main>
+<footer><div class="strip" aria-hidden="true"></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
